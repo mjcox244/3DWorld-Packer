@@ -11,15 +11,15 @@ namespace _3DWPacker {
             string modName = Console.ReadLine();
             Console.WriteLine("Enter a short 1 line description of your mod...");
             string modDesc = Console.ReadLine();
-            Console.WriteLine("Drag and drop the contents folder here!");
+            Console.WriteLine("Drag and drop the content folder here!");
             string modDir = Console.ReadLine().Replace("\"", "");
 
-            //makes a contents directory 
-            Directory.CreateDirectory(Path.Combine(modName, "contents"));
+            //makes a content directory 
+            Directory.CreateDirectory(Path.Combine(modName, "content"));
 
-            //Copys the contents folder the user dragged in earlyer to the output directory
+            //Copys the content folder the user dragged in earlyer to the output directory
             Console.WriteLine("\nPacking the mod...");
-            RecursiveCopy(new DirectoryInfo(modDir), new DirectoryInfo(Path.Combine(modName, "contents")));
+            RecursiveCopy(new DirectoryInfo(modDir), new DirectoryInfo(Path.Combine(modName, "content")));
 
             //this makes the rules.txt for cemu to use
             Console.WriteLine("Generating \"rules.txt\"...");
